@@ -15,10 +15,10 @@ if ((element == "") || (isNaN(element) || (element == null))) {
 }
 
 if (RndArray.indexOf(element) !== -1) {
-  Document.write('Element '+ element + ' is found!');
+  Document.write('Element ', element , ' is found!');
   Document.write(RndArray.join());
 } 
 else {
-  Document.write('Element '+ element + ' not found!');
+  Document.write('Element ', element , ' not found!');
   Document.write(RndArray.join(" "));
 }
