@@ -14,7 +14,7 @@ if ((element == "") || (isNaN(element) || (element == null))) {
   windows.stop;
 }
 
-if (RndArray.indexOf(element) != -1) {
+if (RndArray.filter(element) != -1) {
   alert('Element ' + element + ' is found!' + '\n ' + RndArray.join(' '));
 } 
 else {
