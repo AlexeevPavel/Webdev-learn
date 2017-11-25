@@ -15,8 +15,8 @@ if ((element == "") || (isNaN(element) || (element == null))) {
 }
 
 if (RndArray.indexOf(element) != -1) {
-  alert('Element '+ element + ' is found!'+'\n'+RndArray.join(' '));
+  alert('Element ' + element + ' is found!' + '\n ' + RndArray.join(' '));
 } 
 else {
-  alert('Element ', element , ' not found!'+'\n'+RndArray.join(' '));
+  alert('Element ' + element + ' not found!' + '\n ' + RndArray.join(' '));
 }
