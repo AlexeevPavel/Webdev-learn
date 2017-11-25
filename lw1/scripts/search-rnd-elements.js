@@ -16,9 +16,10 @@ if ((element == "") || (isNaN(element) || (element == null))) {
 var search = RndArray.filter(function(num) {
   return num == element;
 });
-if (!search) {
-  alert('Element ' + element + ' is found! ' + RndArray.join(','));
-} 
+
+if (search) {
+  alert('Element ' + element + ' is found! ' + RndArray.join(' '));
+}
 else {
-  alert('Element ' + element + ' not found! ' + RndArray.join(','));
+  alert('Element ' + element + ' not found! ' + RndArray.join(' '));
 }
