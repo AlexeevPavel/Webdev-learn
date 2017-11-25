@@ -13,8 +13,10 @@ if ((element == "") || (isNaN(element) || (element == null))) {
   alert("Error!");
   windows.stop;
 }
+
 var search = RndArray.filter(function(num) {
-  return num == element;
+ if(num == element) 
+ return true;
 });
 
 if (search) {
