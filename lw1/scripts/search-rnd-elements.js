@@ -13,10 +13,12 @@ if ((element == "") || (isNaN(element) || (element == null))) {
   alert("Error!");
   windows.stop;
 }
-
-if (RndArray.indexOf(element) !== -1) {
-  alert('Element ' + element + ' is found!' + '\n ' + RndArray.join(' '));
+var search = RndArray.filter(function(num) {
+  return num == element;
+});
+if (!search) {
+  alert('Element is found!');
 } 
 else {
-  alert('Element ' + element + ' not found!' + '\n ' + RndArray.join(' '));
+  alert('Element not found!'+search);
 }
