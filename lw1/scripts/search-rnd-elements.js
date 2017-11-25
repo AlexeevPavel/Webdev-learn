@@ -17,8 +17,8 @@ var search = RndArray.filter(function(num) {
   return num == element;
 });
 if (!search) {
-  alert('Element ' + search + ' is found! ' + RndArray.join(','));
+  alert('Element ' + element + ' is found! ' + RndArray.join(','));
 } 
 else {
-  alert('Element ' + search + ' not found! ' + RndArray.join(','));
+  alert('Element ' + element + ' not found! ' + RndArray.join(','));
 }
