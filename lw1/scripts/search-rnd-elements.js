@@ -14,11 +14,9 @@ if ((element == "") || (isNaN(element) || (element == null))) {
   windows.stop;
 }
 
-if (RndArray.indexOf(element) !== -1) {
-  Document.write('Element ', element , ' is found!');
-  Document.write(RndArray.join());
+if (RndArray.indexOf(element) != -1) {
+  alert('Element '+ element + ' is found!'+'\n'+RndArray.join(' '));
 } 
 else {
-  Document.write('Element ', element , ' not found!');
-  Document.write(RndArray.join(" "));
+  alert('Element ', element , ' not found!'+'\n'+RndArray.join(' '));
 }
