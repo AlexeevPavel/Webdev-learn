@@ -207,6 +207,9 @@ line-height : 24px;
 text-decoration : none;
 line-height : 24px;
 }
+.copyright-link:hover{
+	color : red!important;
+}
 .copyright {
 white-space : nowrap;
 }
@@ -280,11 +283,11 @@ font-weight : 300;
 line-height : 20px;
 }
 .news-item-mine {
-margin-top : 10px;
-margin-bottom : 20px;
-font-size : 16px;
-font-weight : 300;
-line-height : 20px;
+	margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 17px;
 }
 .news-item {
 display : inline-block;
@@ -297,13 +300,16 @@ font-size : 16px;
 padding-right : 0;
 }
 .info-link {
-font-weight : 100;
+	font-weight : 100;
+	display : inline-block;
+	font-size: 16px;
+    margin-right: 26px;
 }
 .info-links .link {
 color : #44b;
 }
 .info-links {
-margin : 16px -4px 30px 0;
+margin : 27px -4px 30px 0;
 vertical-align : top;
 }
 .links-title {
@@ -317,15 +323,13 @@ width : 70%;
 padding-right : 4%;
 }
 .info-networks {
-margin-top : 16px;
+margin-top : 27px;
 vertical-align : top;
+display : inline-block;
 }
 .info-networks__link {
 display : inline-block;
 margin-right : 14px;
-}
-.info-networks {
-display : inline-block;
 }
 .networks-title {
 margin-bottom : 20px;
@@ -333,14 +337,14 @@ font-size : 16px;
 }
 .link-insta {
 display : inline-block;
-margin-right : 14px;
+margin-right : 9px;
 width : 24px;
 height : 24px;
 background : url(../images/instagram_link.png);
 }
 .link-insta:hover {
 display : inline-block;
-margin-right : 14px;
+margin-right : 9px;
 width : 24px;
 height : 24px;
 background : url(../images/instagram_link_hover.png);
@@ -354,7 +358,7 @@ background : url(../images/facebook_link.png);
 }
 .link-fb:hover {
 display : inline-block;
-margin-right : 14px;
+margin-right : 9px;
 width : 24px;
 height : 24px;
 background : url(../images/facebook_link_hover.png);
@@ -368,7 +372,7 @@ background : url(../images/twitter_link.png);
 }
 .link-twitter:hover {
 display : inline-block;
-margin-right : 14px;
+margin-right : 11px;
 width : 24px;
 height : 24px;
 background : url(../images/twitter_link_hover.png);
@@ -382,7 +386,7 @@ background : url(../images/vk_link.png);
 }
 .link-vk:hover {
 display : inline-block;
-margin-right : 14px;
+margin-right : 12px;
 width : 24px;
 height : 24px;
 background : url(../images/vk_link_hover.png);
@@ -396,7 +400,7 @@ background : url(../images/youtube_link.png);
 }
 .link-youtube:hover {
 display : inline-block;
-margin-right : 14px;
+margin-right : 10px;
 width : 24px;
 height : 24px;
 background : url(../images/youtube_link_hover.png);
