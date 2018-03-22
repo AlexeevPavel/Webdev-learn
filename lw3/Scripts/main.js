@@ -23,3 +23,18 @@ function checkRules() {
   }
   return true;
 }
+
+document.getElementsByClassName("registration")[0].onsubmit = function () {
+  if (checkValidEmail() && checkPasswords() && checkRules()) {
+    alert("Регистрация завершена");
+  } else {
+    if (!checkValidEmail()) {
+      alert('E-Mail введен неправильно (example@example.example)');
+    } else if (!checkPasswords()) {
+      alert('Пароли должны быть неменее 6-ти символов и совпадать.');
+    } else {
+      alert('Примите условия соглашения.');
+    }
+    return false;
+  }
+};
