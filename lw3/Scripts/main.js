@@ -6,3 +6,12 @@ function checkValidEmail() {
   }
   return true;
 }
+
+function checkPasswords() {
+  var pass = document.getElementsByClassName("password-reg")[0].value;
+  var passConfirm = document.getElementsByClassName("password-reg-repeat")[0].value;
+  if ((pass.length < 6) || (pass != passConfirm)) {
+    return false;
+  }
+  return true;
+}
