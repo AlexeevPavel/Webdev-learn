@@ -15,3 +15,11 @@ function checkPasswords() {
   }
   return true;
 }
+
+function checkRules() {
+  var result = document.getElementsByClassName("check-reg")[0].checked;
+  if (!result) {
+    return false;
+  }
+  return true;
+}
