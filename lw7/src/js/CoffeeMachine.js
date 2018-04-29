@@ -14,6 +14,7 @@ class CoffeeMachine {
       console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
     });
   }
+  
   setCash(cash) {
     if (this.checkValidationCash(cash)) {
       this.currentBalance += cash;
@@ -28,8 +29,6 @@ class CoffeeMachine {
     return cash === 1 || cash === 2 || cash === 5 ||
       cash === 10 || cash === 50 || cash === 100;
   }
-
-
 
   chooseCoffee(coffeeNumber) {
     if (typeof coffeeNumber === 'number') {
