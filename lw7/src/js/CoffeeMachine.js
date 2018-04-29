@@ -2,9 +2,10 @@ class CoffeeMachine {
   constructor() {
     this.currentBalance = 0;
     this.coffeeMenu = [
-      { id: 1, name: 'Макиато', price: 20 },
-      { id: 2, name: 'Капучино', price: 25 },
-      { id: 3, name: 'Моккочино', price: 30 }];
+      { id: 1, name: 'Макиато', price: 15 },
+      { id: 2, name: 'Капучино', price: 20 },
+      { id: 3, name: 'Американо', price: 25 },
+      { id: 4, name: 'Моккочино', price: 30 }];
     this.currentCoffeeNumber = 0;
   }
 
