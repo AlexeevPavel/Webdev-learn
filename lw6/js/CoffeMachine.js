@@ -1,19 +1,20 @@
 class CoffeeMachine {
   constructor() {
-    this._currentBalance = 0;
-    this._coffeeMenu = new Map([
-      [1, { name: "Americano", price: 10 }],
-      [2, { name: "Latte", price: 15 }],
-      [3, { name: "Capuchinno", price: 20 }]
-    ]);
-    this._currentCoffeeNumber = null;
-  }
+    this.currentBalance = 0;
+    this.coffeeMenu = [
+      {id: 1, name: 'Макиато', price: 10 },                
+      {id: 2, name: 'Капучино', price: 15},
+      {id: 3, name: 'Американо', price: 25}];
+      this.currentCoffeeNumber = 0;
+    }
 
   setCash(cash) {
     if (this.checkValidationCash(cash)) {
-      this._currentBalance += cash;
+      this.currentBalance += cash;
+      console.log(`Ваш баланс: ${this.currentBalance} руб.`)
       return true;
     }
+    console.log(`Ошибка! Внесите 1,2,5,10,50 или 100 руб.!`)
     return false;
   }
 
@@ -23,33 +24,34 @@ class CoffeeMachine {
   }
 
   getCoffeeMenu() {
-    for (let [id, coffee] of this._coffeeMenu) {
-      console.log(`${id} - ${coffee.name} (${coffee.price} руб.)`);
-    }
+    this.coffeeMenu.forEach(function(coffee, i) {
+      console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
+    });
   }
 
   chooseCoffee(coffeeNumber) {
-    if (this.checkValidationNumberCoffee(coffeeNumber) &&
-      this.checkEnoughMoney(coffeeNumber)) {
-      this._currentCoffeeNumber = coffeeNumber;
-      return true;
+    if (typeof coffeeNumber === 'number') {
+      if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
+        if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
+          console.log('Ваш выбор: ' + coffeeNumber);
+          this.currentCoffeeNumber = coffeeNumber - 1;
+          return true;
+        }
+        console.log('Ошибка! Недостаточно средств!');
+        return false;
+      }
+      console.log('Ошибка! Вы ввели неверное значение!');
+      return false;
     }
     return false;
   }
 
-  checkEnoughMoney(coffeeNumber) {
-    return (this._currentBalance >= this._coffeeMenu.get(coffeeNumber).price);
-  }
-
-  checkValidationNumberCoffee(number) {
-    return this._coffeeMenu.has(number);
-  }
-
-  calculateRemain() {
-    return this._currentBalance - this._coffeeMenu.get(this._currentCoffeeNumber).price;
-  }
-
   getRemainCash() {
-    return this.calculateRemain();
+    if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
+      var remain = this.currentBalance - this.coffeeMenu[this.currentCoffeeNumber].price;
+      console.log('Остаток баланса: ' + remain);
+      return remain;
+    }
+    return false;
   }
 }
