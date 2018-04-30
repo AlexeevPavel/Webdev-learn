@@ -31,7 +31,7 @@ class CoffeeMachine {
 
   chooseCoffee(coffeeNumber) {
     if (typeof coffeeNumber === 'number') {
-      if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
+      if (this.checkCoffeeNumber(coffeeNumber)) {
         if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
           console.log('Ваш выбор: ' + coffeeNumber);
           this.currentCoffeeNumber = coffeeNumber - 1;
@@ -44,6 +44,11 @@ class CoffeeMachine {
       return false;
     }
     return false;
+    console.log('Ошибка! Вы ввели не число!');
+  }
+
+  checkCoffeeNumber(number) {
+    return (this.coffeeMenu.find(item => item.id === number) !== undefined) ? true : false;
   }
 
   getRemainCash() {
