@@ -2,19 +2,12 @@ class CoffeeMachine {
   constructor() {
     this.currentBalance = 0;
     this.coffeeMenu = [
-      { id: 1, name: 'Макиато', price: 15 },
-      { id: 2, name: 'Капучино', price: 20 },
-      { id: 3, name: 'Американо', price: 25 },
-      { id: 4, name: 'Моккочино', price: 30 }];
-    this.currentCoffeeNumber = 0;
-  }
+      {id: 1, name: 'Макиато', price: 10 },                
+      {id: 2, name: 'Капучино', price: 15},
+      {id: 3, name: 'Американо', price: 25}];
+      this.currentCoffeeNumber = 0;
+    }
 
-  getCoffeeMenu() {
-    this.coffeeMenu.forEach(function (coffee, i) {
-      console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
-    });
-  }
-  
   setCash(cash) {
     if (this.checkValidationCash(cash)) {
       this.currentBalance += cash;
@@ -30,10 +23,16 @@ class CoffeeMachine {
       cash === 10 || cash === 50 || cash === 100;
   }
 
+  getCoffeeMenu() {
+    this.coffeeMenu.forEach(function(coffee, i) {
+      console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
+    });
+  }
+
   chooseCoffee(coffeeNumber) {
     if (typeof coffeeNumber === 'number') {
-      if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
-        if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price) {
+      if (this.checkCoffeeNumber(coffeeNumber)) {
+        if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
           console.log('Ваш выбор: ' + coffeeNumber);
           this.currentCoffeeNumber = coffeeNumber - 1;
           return true;
@@ -45,10 +44,15 @@ class CoffeeMachine {
       return false;
     }
     return false;
+    console.log('Ошибка! Вы ввели не число!');
+  }
+
+  checkCoffeeNumber(number) {
+    return (this.coffeeMenu.find(item => item.id === number) !== undefined) ? true : false;
   }
 
   getRemainCash() {
-    if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number') {
+    if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
       var remain = this.currentBalance - this.coffeeMenu[this.currentCoffeeNumber].price;
       console.log('Остаток баланса: ' + remain);
       return remain;

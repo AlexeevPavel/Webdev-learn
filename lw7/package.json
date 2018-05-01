@@ -1,18 +1,15 @@
 {
   "name": "lw7",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/test.js",
-    "test-coverage": "istanbul cover node_modules/mocha/bin/_mocha ./test/test.js"
+    "test": "ava ./tests/tests.js"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.1.1"
-  },
-  "author": "mrhunfer",
+  "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "ava-spec": "^1.1.1"
+  }
 }
