@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava ./tests/tests.js"
+    "test": "ava ./tests/tests.js",
+    "test-coverage": "nyc ava"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.25.0",
-    "ava-spec": "^1.1.1"
+    "ava-spec": "^1.1.1",
+    "istanbul": "^0.4.5",
+    "nyc": "^11.7.1"
   }
 }
