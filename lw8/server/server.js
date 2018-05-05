@@ -1,9 +1,14 @@
-var http = require('http');
-var static = require('node-static');
-var file = new static.Server('.');
+const express = require('express');
+const pars = require('body-parser');
+const mongo = require('mongoose');
+const app = express();
 
-http.createServer(function(req, res) {
-  file.serve(req, res);
-}).listen(8090);
+mongo.connect('mongodb://localhost/products');
+mongo.Promise = global.Promise;
 
-console.log('Server running on port 8080');
+//app.use(pars.json());
+//app.use('/api', require('./routes/routes'));
+
+app.listen(process.env.port || 8080, function() {
+  console.log('Server running on port 8080')
+})
