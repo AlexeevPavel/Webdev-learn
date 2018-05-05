@@ -11,6 +11,6 @@ app.use(bodyParser.json());
 
 app.use('/api', require('./routes/routes'));
 
-app.listen(process.env.port || 6700, function() {
+app.listen(process.env.port || 8888, function() {
   console.log('Server running!');
 });
