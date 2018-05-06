@@ -1,18 +1,21 @@
 const mongo = require('mongoose');
 const schem = mongo.Schema;
+
 const ReviewSchema = new schem({
-    productId: {
-        type: schem.Types.ObjectId,
-        required: [true]
-    },
-    discription: {
-        type: string,
-        required: [true]
-    },
-    created: {
-        type: Data,
-        default: date.now,
-    }
+  productId: {
+    type: schem.Types.ObjectId,
+    required: [true]
+  },
+  discription: {
+    type: String,
+    required: [true]
+  },
+  created: { 
+    type: Date,
+    default: Date.now,
+  }
 });
-const Review = mongoose.model('review', ReviewSchema);
-module.exports = review;
+
+const Review = mongo.model('review', ReviewSchema);
+
+module.exports = Review;

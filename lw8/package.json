@@ -6,17 +6,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/server.js"
   },
-  "author": "MrHunfer",
-  "license": "ISC",
   "devDependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "mongodb": "^3.0.7",
-    "mongoose": "^5.0.17",
+    "mongodb": "^2.2.35",
+    "mongoose": "^4.13.12",
     "mongoose-id-validator": "^0.4.3",
     "morgan": "^1.9.0",
-    "nconf": "^0.10.0",
+    "nconf": "^0.8.5",
     "node-static": "^0.7.10",
     "nodemon": "^1.17.3"
-  }
+  },
+  "keywords": [],
+  "author": "MrHunfer",
+  "license": "ISC",
+  "description": ""
 }

@@ -1,11 +1,14 @@
 const mongo = require('mongoose');
 const schem = mongo.Schema;
-const ProdSchem = new Schema({
-    name: {
-        type: String,
-        unique: [true],
-        require: [true]
-    }
+
+const ProductSchema = new schem({
+  name: {
+    type: String,
+    unique: [true],
+    required: [true]
+  }
 });
-const Prod = mongo.model('product', ProdSchem);
-module.exports = prod;
+
+const Product = mongo.model('product', ProductSchema);
+
+module.exports = Product;
