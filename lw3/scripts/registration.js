@@ -1,5 +1,5 @@
 function checkValidEmail() {
-  var email = document.getElementsByClassName("email-reg")[0].value;
+  var email = $(".email-reg").val();
   var result = email.match(/^[0-9a-z-\.]+\@[0-9a-z-]{1,}\.[a-z]{2,}$/i);
   if (!result) {
     return false;
@@ -8,8 +8,8 @@ function checkValidEmail() {
 }
 
 function checkPasswords() {
-  var pass = document.getElementsByClassName("password-reg")[0].value;
-  var passConfirm = document.getElementsByClassName("password-reg-repeat")[0].value;
+  var pass = $(".password-reg").val();
+  var passConfirm = $(".password-reg-repeat").val();
   if ((pass.length < 6) || (pass != passConfirm)) {
     return false;
   }
@@ -17,7 +17,7 @@ function checkPasswords() {
 }
 
 function checkRules() {
-  var result = document.getElementsByClassName("check-reg")[0].checked;
+  var result = $(".check-reg").prop("checked");
   if (!result) {
     return false;
   }
